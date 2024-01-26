@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>outline.feature</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #9e880d;}
+.s1 { color: #080808;}
+.s2 { color: #0033b3;}
+.s3 { color: #080808;}
+.s4 { color: #297bde;}
+.ln { color: #aeb3c2; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+outline.feature</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">@Scenariooutline</span>
+<a name="l2"><span class="ln">2    </span></a><span class="s2">Feature</span><span class="s1">: </span><span class="s3">Scenario outline example</span>
+<a name="l3"><span class="ln">3    </span></a>
+<a name="l4"><span class="ln">4    </span></a>  <span class="s0">@Quotetests</span>
+<a name="l5"><span class="ln">5    </span></a>  <span class="s2">Scenario Outline</span><span class="s1">: </span><span class="s3">Quote tests with datasets</span>
+<a name="l6"><span class="ln">6    </span></a>    <span class="s2">Given </span><span class="s3">I open url &quot;http://quote-stage.portnov.com&quot;</span>
+<a name="l7"><span class="ln">7    </span></a>    <span class="s2">Then </span><span class="s3">I enter &quot;</span><span class="s1">&lt;fullname&gt;</span><span class="s3">&quot; into the field with xpath &quot;//input[@id='name']&quot;</span>
+<a name="l8"><span class="ln">8    </span></a>    <span class="s2">And </span><span class="s3">I enter &quot;</span><span class="s1">&lt;username&gt;</span><span class="s3">&quot; into the field with xpath &quot;//input[@name='username']&quot;</span>
+<a name="l9"><span class="ln">9    </span></a>    <span class="s2">And </span><span class="s3">I enter &quot;</span><span class="s1">&lt;email&gt;</span><span class="s3">&quot; into the field with xpath &quot;//input[@name='email']&quot;</span>
+<a name="l10"><span class="ln">10   </span></a>    <span class="s2">And </span><span class="s3">I enter &quot;</span><span class="s1">&lt;password&gt;</span><span class="s3">&quot; into the field with xpath &quot;//input[@name='password']&quot;</span>
+<a name="l11"><span class="ln">11   </span></a>    <span class="s2">And </span><span class="s3">I enter &quot;</span><span class="s1">&lt;confirmpassword&gt;</span><span class="s3">&quot; into the field with xpath &quot;//input[@name='confirmPassword']&quot;</span>
+<a name="l12"><span class="ln">12   </span></a>    <span class="s2">And </span><span class="s3">I click on element with xpath &quot;//input[@name='agreedToPrivacyPolicy']&quot;</span>
+<a name="l13"><span class="ln">13   </span></a>    <span class="s2">Then </span><span class="s3">I click on element using JavaScript with xpath &quot;//input[@value='female']&quot;</span>
+<a name="l14"><span class="ln">14   </span></a>    <span class="s2">And </span><span class="s3">I click on element with xpath &quot;//button[@name='formSubmit']&quot;</span>
+<a name="l15"><span class="ln">15   </span></a>    <span class="s2">Then </span><span class="s3">element with xpath &quot;//b[contains(text(),'true')]&quot; should contain text &quot;true&quot;</span>
+<a name="l16"><span class="ln">16   </span></a>    <span class="s2">And </span><span class="s3">I wait for 3 sec</span>
+<a name="l17"><span class="ln">17   </span></a>
+<a name="l18"><span class="ln">18   </span></a>    <span class="s2">Examples</span><span class="s1">:</span>
+<a name="l19"><span class="ln">19   </span></a>      <span class="s2">|</span><span class="s4">fullname</span><span class="s2">|</span><span class="s4">username</span><span class="s2">|</span><span class="s4">email             </span><span class="s2">| </span><span class="s4">password</span><span class="s2">|</span><span class="s4">confirmpassword  </span><span class="s2">|</span>
+<a name="l20"><span class="ln">20   </span></a>      <span class="s2">| </span><span class="s4">ksenia </span><span class="s2">|</span><span class="s4">baksenia</span><span class="s2">|</span><span class="s4">test1@example.com </span><span class="s2">|</span><span class="s4">12345!   </span><span class="s2">|</span><span class="s4">12345!           </span><span class="s2">|</span>
+<a name="l21"><span class="ln">21   </span></a>      <span class="s2">| </span><span class="s4">alex   </span><span class="s2">|</span><span class="s4">alex1   </span><span class="s2">|</span><span class="s4">test2@example.com </span><span class="s2">|</span><span class="s4">222222   </span><span class="s2">|</span><span class="s4">222222           </span><span class="s2">|</span>
+<a name="l22"><span class="ln">22   </span></a>      <span class="s2">| </span><span class="s4">olga   </span><span class="s2">|</span><span class="s4">olga1   </span><span class="s2">|</span><span class="s4">test3@example.com </span><span class="s2">|</span><span class="s4">333333   </span><span class="s2">|</span><span class="s4">333333           </span><span class="s2">|</span>
+<a name="l23"><span class="ln">23   </span></a>      <span class="s2">| </span><span class="s4">denis  </span><span class="s2">|</span><span class="s4">denis1  </span><span class="s2">|</span><span class="s4">test4@example.com </span><span class="s2">|</span><span class="s4">444444   </span><span class="s2">|</span><span class="s4">444444           </span><span class="s2">|</span>
+<a name="l24"><span class="ln">24   </span></a></pre>
+</body>
+</html>
